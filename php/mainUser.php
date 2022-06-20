@@ -16,7 +16,7 @@ include("../include/inHeaderUser.php");
 <body style="background-color:#ccd9ff">
 <div class="content">
 
-    
+
     <div class="gallery2">
         <a href="editProfile.php">
             <img src="../imagini/look.jpg" class="left" alt="Editeaza profilul"  >

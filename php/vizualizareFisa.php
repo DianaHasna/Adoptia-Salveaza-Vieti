@@ -32,7 +32,7 @@ $check_animal->execute(array($id_animal));
 
 $infoAnimal = $check_animal->fetch();
 
-echo "<center><h2>" . $infoAnimal['nume'] .  "</h2></center><br><br>";
+echo "<center><h2>Fisa medicala a lui " . $infoAnimal['nume'] .  "</h2></center><br><br>";
 
 $check_fisa = $conn->prepare("select * from fisa_medicala where id_animal=?");
 $check_fisa->execute(array($id_animal));
@@ -53,7 +53,7 @@ if($rows == 0){
     }
 }
 else{
-    echo "<p>Bolile pe care le are animalul:</p>";
+    echo "<p>Bolile pe care le are " . $infoAnimal['nume'] . ":</p>";
     echo "<ol>";
     while($map = $check_boli->fetch()){
         $id_boala = $map['id_boala'];

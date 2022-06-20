@@ -57,6 +57,9 @@ if(isset($_SESSION['id_administrator'])){
 if($rows == 1) {
     echo "<a href='vizualizareFisa.php?id_animal=" . $id_animal . "'>Vezi fisa medicala a animalului</a>";
 }
+if(isset($_SESSION['id_utilizator'])){
+    echo "<br><a href='adoptaAnimal.php?id_animal=" . $id_animal . "'>Adopta animalul curent</a>";
+}
 
 
 include("../include/footer.php");

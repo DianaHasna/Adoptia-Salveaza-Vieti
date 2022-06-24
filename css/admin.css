@@ -24,8 +24,11 @@ body.logged{
 }
 
 .container1{
-    width: 100%;
-    height: 100%;
+    width: 93%;
+    height: 50%;
+    padding-bottom: 70px;
+    float: right;
+
 
 }
 
@@ -35,7 +38,10 @@ body.logged{
     padding: 16px;
     filter:opacity(200%);
     margin:auto;
-    border-radius:2px;
+    border-radius:10px;
+    color: #262626;
+    box-shadow: 20px 30px;
+
 }
 
 
@@ -65,7 +71,7 @@ input[type=text], input[type=password]{
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
-    border-radius: 34px;
+
     background: #f1f1f1;
     opacity: 70%;
     font-family: "Comic Sans MS";
@@ -143,7 +149,9 @@ div.desc {
     padding: 15px;
     text-align: center;
     border-top: 1px solid black;
-    background-color:  white;
+    background-color: #292F33 ;
+    color: white;
+    font-family: "Raleway", sans-serif;
 
 }
 
@@ -247,10 +255,15 @@ h1.a{
     color: #747575;
 
 }
+h1.a2{
+    font-family: "Raleway", sans-serif;
+    color:  #1a1a1a;
+
+}
 
 label{
     font-family: "Raleway", sans-serif;
-    color:#747575;
+    color: #1a1a1a;
 }
 
 
@@ -275,6 +288,7 @@ div.footer{
 
 input.white_text{
     color: white;
+
 }
 
 h2.title{
@@ -331,7 +345,7 @@ p.indent{
 
 
 
-.center{
+.centered{
     margin-left: auto;
     margin-right: auto;
 }
@@ -432,7 +446,10 @@ nav > ul > li:first-child{
 .content{
     min-height: 100%;
     margin-bottom: -100px;
-    padding: 20px;
+
+
+
+
 
 
 }
@@ -493,10 +510,8 @@ div.desc {
 
 }
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+
+    float: right;
 }
 .scris{
     text-align: center;
@@ -527,8 +542,9 @@ td, th {
 div.gallery2 {
     margin: 5px;
     border: 1px solid black;
-    width: 100%;
+    width: 30%;
     position: center;
+    background-color: #ff8c1a;
 
 }
 div.gallery2:hover {
@@ -537,8 +553,8 @@ div.gallery2:hover {
 
 div.gallery2 img {
 
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
 
 }
 .left{
@@ -548,4 +564,69 @@ div.gallery2 img {
 .right{
     margin-left: 65%;
     margin-right: 0%;
+}
+.dim {
+    height: 200px;
+    width: 300px;
+}
+
+.text3 {
+    color: black;
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+}
+.text4{
+    text-color: #200000;
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+}
+.btn3{
+    background-color:#ff8c1a;
+    border: none;
+    color: #292F33;
+    padding: 10px 27px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+}
+
+
+.container2 {
+    width:30%;
+    height:70%;
+    padding: 16px;
+    background-color: white;
+    margin:auto;
+    border-radius:10px;
+    color: #262626;
+    box-shadow: 20px 30px;
+
+}
+.container4 {
+    width:30%;
+    height:70%;
+    padding: 16px;
+    filter:opacity(300%);
+    margin:auto;
+    border-radius:10px;
+    color: black;
+    background-color: white;
+    background: rgba(0,0,0,0.3);
+    box-shadow: 20px 30px;
+
+}
+slideshow-container4 {
+    max-width: 1300px;
+    width: 100%;
+    height: 400px;
+    margin-top: 0%;
+    position: relative;
+
+
+}
+.clasa{
+    background-image: url("../imagini/adopta.jpg");
+    opacity: 0.5;
+
 }

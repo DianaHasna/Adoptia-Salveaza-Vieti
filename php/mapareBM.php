@@ -11,22 +11,24 @@ include("../include/inHeaderAdmin.php");
 
 
 
-<title>Asociere boala medicament</title>
+<title >Asociere boala medicament</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/med.jpg" >
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
-            <div class="container">
+            <div class="container4">
                 <div id="formular">
-                    <h1 align="center" class="a">Asociaza un medicament unei boli</h1>
-
+                    <h1 align="center" class="a" style="color: #0b0c10;">Asociere medicament-afectiune</h1>
+<br>
+<br>
 
                     <?php
 
                     $boli = $conn->prepare("select * from boli");
                     $boli->execute();
-                    echo "<p>Numele bolii:";
+                    echo "<p>Denumirea afectiunii:";
 
 
                     while($boala = $boli->fetch()){
@@ -36,7 +38,7 @@ include("../include/inHeaderAdmin.php");
 
                     $medicamente = $conn->prepare("select * from medicamente");
                     $medicamente->execute();
-                    echo "<p>Numele medicamentului:";
+                    echo "<p>Denumire medicament:";
 
 
                     while($medicament = $medicamente->fetch()){
@@ -49,9 +51,9 @@ include("../include/inHeaderAdmin.php");
 
                     <hr>
 
-                    <button class="submit" type="submit" name="submit">Creeaza asociere</button>
+                    <button class="submit" type="submit" name="submit" style="width: 100px">Asociaza</button>
 
-                    <button class="reset" type="reset">Reset</button>
+                    <button class="reset" type="reset" style="width: 100px">Reset</button>
 
                 </div>
 

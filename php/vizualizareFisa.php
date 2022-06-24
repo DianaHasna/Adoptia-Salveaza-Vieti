@@ -32,7 +32,7 @@ $check_animal->execute(array($id_animal));
 
 $infoAnimal = $check_animal->fetch();
 
-echo "<center><h2>Fisa medicala a lui " . $infoAnimal['nume'] .  "</h2></center><br><br>";
+echo "<center><h2>Fisa medicala  " . $infoAnimal['nume'] .  "</h2></center><br><br>";
 
 $check_fisa = $conn->prepare("select * from fisa_medicala where id_animal=?");
 $check_fisa->execute(array($id_animal));
@@ -46,29 +46,71 @@ $check_boli->execute(array($fisa_id));
 
 $rows = $check_boli->rowCount();
 
-if($rows == 0){
-    echo "<p>Animalul este perfect sanatos, nu are nicio boala!</p>";
-    if(isset($_SESSION['id_administrator'])){
-        echo "<a href='editFisa.php?id_animal=" . $id_animal . "&id_fisa=" . $fisa_id . "'><input type='button' value='Editeaza fisa medicala'></a>";
-    }
-}
-else{
-    echo "<p>Bolile pe care le are " . $infoAnimal['nume'] . ":</p>";
-    echo "<ol>";
-    while($map = $check_boli->fetch()){
-        $id_boala = $map['id_boala'];
 
-        $check_infoBoala = $conn->prepare("select * from boli where id_boala=?");
-        $check_infoBoala->execute(array($id_boala));
-        $infoBoala = $check_infoBoala->fetch();
+?>
 
-        echo "<li><a href='vizualizareBoala.php?id_boala=" . $id_boala . "'>" . $infoBoala['nume_boala'] . "</a></li>";
-    }
-    echo "</ol>";
 
-    if(isset($_SESSION['id_administrator'])){
-        echo "<a href='editFisa.php?id_animal=" . $id_animal . "&id_fisa=" . $fisa_id . "'><input type='button' value='Editeaza fisa medicala'></a>";
-    }
-}
+<title>Vizualizare fisa medicala</title>
 
-include("../include/footer.php");
+
+    <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <style>
+td{
+    font-weight: bold;
+        }
+    </style>
+
+
+    <div class="row content">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <table class="table table-bordered table-hover">
+                    <tr align="center">
+                        <td colspan="7" class="active"><h2><?php echo $infoAnimal['nume']; ?></h2>
+
+<tr>
+    <th rowspan="3"> <?php echo "<img src='" . $infoAnimal['imagine_ref'] . "' style ='width:200px;height:200px''>"; ?>
+
+    <td>Descriere
+    <td><textarea class="form-control" type="text" name="nume" ><?php echo $infoAnimal['descriere']; ?>
+                            </textarea>
+<tr>
+    <td>Boli
+    <td><?php if($rows == 0){
+                                echo "<p>Animalul nu prezinta nici o boala sau tratament!</p>";
+
+                            }
+                            else{
+                                echo "<p>Bolile de care sufera " . $infoAnimal['nume'] . ":</p>";
+                                echo "<ol>";
+                                while($map = $check_boli->fetch()){
+                                    $id_boala = $map['id_boala'];
+
+                                    $check_infoBoala = $conn->prepare("select * from boli where id_boala=?");
+                                    $check_infoBoala->execute(array($id_boala));
+                                    $infoBoala = $check_infoBoala->fetch();
+
+                                    echo "<li><a href='vizualizareBoala.php?id_boala=" . $id_boala . "'>" . $infoBoala['nume_boala'] . "</a></li>";
+                                }
+                                echo "</ol>";
+
+
+                            } ?>
+
+<tr align="center">
+    <td colspan="7"><?php if(isset($_SESSION['id_administrator'])){
+    echo "<a href='editFisa.php?id_animal=" . $id_animal . "&id_fisa=" . $fisa_id . "' ><input type='button' value='Editeaza fisa medicala' class='btn3'></a>";
+};?>
+
+
+        </table>
+        </form>
+
+        </div>
+
+        </div>
+
+<?php include("../include/footer.php"); ?>

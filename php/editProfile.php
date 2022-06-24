@@ -52,8 +52,11 @@ $telefon = $res['telefon'];
             <form action="" method="POST" enctype="multipart/form-data">
                 <table class="table table-bordered table-hover">
                     <tr align="center">
-                        <td colspan="6" class="active"><h2>Editeaza profilul</h2>
+                        <td colspan="7" class="active"><h2>Editeaza profilul</h2>
+
                     <tr>
+                        <th rowspan="5"><img src="../imagini/cutu4.jpg">
+
                         <td>Nume
                         <td><input class="form-control" type="text" name="nume" required value="<?php echo $first_name; ?>">
                     <tr>
@@ -71,7 +74,7 @@ $telefon = $res['telefon'];
                         <td><input class="form-control" type="email" name="email" required value="<?php echo $email; ?>">
 
                     <tr align="center">
-                        <td colspan="6">
+                        <td colspan="7">
                             <input type="submit" class="btn btn-info" name="update" style="width: 250px;" value="Editeaza">
 
 

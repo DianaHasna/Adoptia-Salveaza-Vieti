@@ -13,25 +13,28 @@ include("../include/inHeaderAdmin.php");
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/boala.png" >
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
             <div class="container">
                 <div id="formular">
-                    <h1 align="center" class="a">Creeare boala</h1>
+                    <h1 align="center" class="a">Adauga boala</h1>
+                    <br>
+                    <br>
 
-                    <label for="nume"><b>Numele bolii:</b></label>
+                    <label for="nume"><b>Denumirea bolii:</b></label>
                     <input type="text" placeholder="Adauga numele bolii" name="nume" />
 
                     <br>
-                    <label for="durata"><b>Durata bolii:</b></label>
+                    <label for="durata"><b>Perioada de tratament:</b></label>
                     <input type="text" placeholder="Adauga durata bolii" name="durata" />
 
                     <hr>
 
-                    <button class="submit" type="submit" onclick="classNames()" name="submit">Adauga</button>
+                    <button class="submit" type="submit" onclick="classNames()" name="submit" style="width: 100px">Adauga</button>
 
-                    <button class="reset" type="reset">Reset</button>
+                    <button class="reset" type="reset" style="width: 100px">Reset</button>
 
                 </div>
 
@@ -88,4 +91,5 @@ if(isset($_POST["submit"])) {
 }
 
 
+include("../include/footer.php");
 

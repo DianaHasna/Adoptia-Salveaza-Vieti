@@ -32,7 +32,7 @@ include("connection.php");
             </nav>
 
             <div class="center">
-                <a href="/Adoptia-Salveaza-Vieti/index.php"></a>
+                <a href="/Adoptia Salveaza Vieti/index.php"></a>
             </div>
 
             <ul>
@@ -49,5 +49,3 @@ include("connection.php");
     </div>
 
 </div>
-
-

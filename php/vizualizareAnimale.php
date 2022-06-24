@@ -31,7 +31,7 @@ if(isset($_SESSION['id_administrator'])){
     while($animal = $check_animale->fetch())
     {
 
-            echo "<div class='gallery'>
+        echo "<div class='gallery'>
                         <a href='vizualizareAnimal.php?id_animal=" . $animal["id_animal"] . "'>
                         <div class='desc'> " . $animal["nume"] . " </div><br>
                             <img src='" . $animal["imagine_ref"] . "' style='width=100%;'><br>
@@ -47,10 +47,20 @@ if(isset($_SESSION['id_utilizator'])){
     $acomodabil = $_GET['acomodabil'];
     $mediu_viata = $_GET['mediu_viata'];
 
-    $check_animale = $conn->prepare("select * from animale where tip_animal=? and gen=? and mediu_viata=? and acomodabil=? and adoptat='nu'");
+    if($acomodabil === "da"){
 
-    $check_animale->execute(array($tip_animal,$gen_animal,$mediu_viata,$acomodabil));
+        $check_animale = $conn->prepare("select * from animale where tip_animal=? and gen=? and mediu_viata=? and acomodabil=? and adoptat='nu'");
 
+        $check_animale->execute(array($tip_animal,$gen_animal,$mediu_viata,$acomodabil));
+
+    }
+    if($acomodabil === "nu"){
+
+        $check_animale = $conn->prepare("select * from animale where tip_animal=? and gen=? and mediu_viata=? and adoptat='nu'");
+
+        $check_animale->execute(array($tip_animal,$gen_animal,$mediu_viata));
+
+    }
     echo "<div class=content>";
     while($animal = $check_animale->fetch())
     {
@@ -72,5 +82,3 @@ if(isset($_SESSION['id_utilizator'])){
 include("../include/footer.php");
 
 ?>
-
-

@@ -20,36 +20,39 @@ if(isset($_SESSION["id_administrator"])){
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/see.jpg"></body>
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
-            <div class="container">
+            <div class="container2">
                 <div id="formular">
-                    <h1 align="center" class="a">Adauga semnalare</h1>
+                    <h1 align="center" class="a">Adauga sesizare</h1>
+                    <br>
+                    <br>
 
-                    <label for="tip_semnalare"><b>Tipul semnalarii:</b></label>
+                    <label for="tip_semnalare" class = "text4"><b>Tipul semnalarii:</b></label>
 
 
                     <br>
                     <input type="radio" value="abuz" name="tip_semnalare" >
-                    <input type="button" value="abuz" name="abuz">
+                    <input type="button" value="Abuz" name="abuz" class="btn3">
 
                     <input type="radio" value="abandon" name="tip_semnalare">
-                    <input type="button" value="abandon" name="abandon">
+                    <input type="button" value="Abandon" name="abandon" class="btn3">
 
                     <br>
-
-                    <label for="descriere"><b>Descriere:</b></label>
                     <br>
+
+                    <label for="descriere " class = "text4"><b>Descriere:</b></label>
                     <br>
                     <textarea placeholder="Introdu descrierea semnalarii" name="descriere" >
 
                     </textarea>
 
                     <br>
-
-                    <label for="locatie"><b>Locatie:</b></label>
                     <br>
+
+                    <label for="locatie" class = "text4"><b>Locatie:</b></label>
                     <br>
                     <input type="text" placeholder="Introdu locatia semnalarii" name="locatie" >
 
@@ -59,22 +62,22 @@ if(isset($_SESSION["id_administrator"])){
                     <br>
 
 
-                    <label for="tip_animal"><b>Tipul animalului:</b></label>
+                    <label for="tip_animal" class = "text4"><b>Tipul animalului:</b></label>
                     <br>
                     <input type="radio" value="caine" name="tip_animal" >
-                    <input type="button" value="caine">
+                    <input type="button" value="Caine"  class="btn3">
 
                     <input type="radio" value="pisica" name="tip_animal">
-                    <input type="button" value="pisica">
+                    <input type="button" value="Pisica"  class="btn3">
 
 
                 </div>
 
                 <hr>
 
-                <button class="submit" type="submit" name="submit">Adauga semnalare</button>
+                <button class="submit" type="submit" name="submit"style="width: 100px">Sesizare</button>
 
-                <button class="reset" type="reset">Reset</button>
+                <button class="reset" type="reset" style="width: 100px">Reset</button>
 
 
 

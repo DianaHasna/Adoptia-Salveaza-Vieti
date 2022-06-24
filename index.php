@@ -59,17 +59,16 @@ include("include/outHeader.php");
             <img class="slideshow" src="imagini/look.jpg">
             <div class="text">TIRED OF BEEING ALONE?</div>
             <button class="btn"><a href="/Adoptia-Salveaza-Vieti/php/signup.php">Join now!</a></button>
-            <div class="text2">If you want to know how much new knowledge you have accumulated from the existing courses,
-                <br>come and test your knowledge!
-                <br>Tests specially created and designed by the authors of the courses!</div>
+            <div class="text2">Fill the empty space from your life with the love of a pet.
+                <br>Let us find you a forever friend!</div>
         </div>
 
         <div class="mySlides fade">
             <img class="slideshow" src="imagini/look.jpg" >
-            <div class="text">Learn from your home commfort!</div>
+            <div class="text">Color your life!</div>
             <button class="btn"><a href="/Adoptia-Salveaza-Vieti/php/signup.php">Join now!</a></button>
-            <div class="text2">From now on you can document yourself and learn from different fields!
-                <br>Everything from the comfort of your home!</div>
+            <div class="text2">You need them and they need you!
+                <br>There is no " perfect time " for adopting , there is now!</div>
         </div>
 
 
@@ -102,7 +101,7 @@ include("include/outHeader.php");
     <br>
     <br>
 
-    <table class="center">
+    <table class="centered">
         <tr>
             <th class="scris">WHY CHOOSE US</th>
         </tr>

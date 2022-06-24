@@ -10,71 +10,83 @@ include("../include/inHeaderAdmin.php");
 
 
 
-<title>Home</title>
+<title>Adaugare animale</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
-<div class="content">
+<body background="../imagini/add2.jpg" style="background-attachment: fixed" >
+
+<div class="content" >
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
             <div class="container">
                 <div id="formular">
                     <h1 align="center" class="a">Adauga animal</h1>
+                    <br>
+                    <br>
 
-                    <label for="nume"><b>Numele animalului:</b></label>
-                    <input type="text" placeholder="Adauga numele animalului" name="nume" />
+                    <label for="nume" class="text3"><b>Numele animalului:</b></label>
+                    <input type="text" placeholder="Adauga numele animalului" name="nume"class="text3" />
 
                     <br>
-                    <label for="rasa"><b>Rasa animalului:</b></label>
-                    <input type="text" placeholder="Adauga rasa animalului" name="rasa" />
+                    <label for="rasa" class="text3" ><b>Rasa animalului:</b></label>
+                    <input type="text" placeholder="Adauga rasa animalului" name="rasa" class="text3"/>
 
-                    <label for="gen"><b>Genul animalului:</b></label>
+                    <label for="gen" class="text3"><b>Genul animalului:</b></label>
                     <br>
-                    <select name="gen">
-                        <option value="M">Masculin</option>
+                    <select name="gen" >
+                        <option value="M" >Masculin</option>
                         <option value="F">Feminin</option>
                     </select>
 
                     <br>
-
-                    <label for="tip"><b>Tipul animalului:</b></label>
                     <br>
-                    <select name="tip">
+
+                    <label for="tip" class="text3"><b>Tipul animalului:</b></label>
+                    <br>
+                    <select name="tip" >
                         <option value="Caine">Caine</option>
                         <option value="Pisica">Pisica</option>
                     </select>
 
                     <br>
+                    <br>
 
 
-                    <label for="varsta"><b>Varsta animalului:</b></label>
+                    <label for="varsta" class="text3"><b>Varsta animalului:</b></label>
                     <input type="text" placeholder="Adauga varsta animalului" name="varsta" />
 
 
-                    <label for="mediu_viata"><b>Alege mediul de viata al animalului:</b></label>
+                    <label for="mediu_viata" class="text3"><b>Selecteaza mediul de viata:</b></label>
                     <br>
                     <input type="radio" value="Casa" name="mediu_viata" >
-                    <input type="button" value="casa" >
+                    <input type="button" value="casa"  class="btn3" style="width: 70px">
 
                     <input type="radio" value="Bloc" name="mediu_viata">
-                    <input type="button" value="bloc" >
+                    <input type="button" value="bloc"  class="btn3" style="width: 70px" >
 
                     <input type="radio" value="Casa si bloc" name="mediu_viata">
-                    <input type="button" value="Casa si bloc">
+                    <input type="button" value="casa si bloc" style="width: 120px"  class="btn3">
+                    <br>
+                    <br>
 
 
 
-                    <label for="acomodabil"><b>Animalul este acomodabil cu alte animale?:</b></label>
-
+                    <label for="acomodabil" class="text3"><b>Animalul este acomodabil cu alte animale?:</b></label>
+<br>
 
                     <input type="radio" value="da" name="acomodabil" >
-                    <input type="button" value="da" >
+                    <input type="button" value="da"  class="btn3" >
 
                     <input type="radio" value="nu" name="acomodabil">
-                    <input type="button" value="nu" >
+                    <input type="button" value="nu"  class="btn3" >
+                    <br>
+                    <br>
 
-                    <label for="descriere"><b>Descriere:</b></label>
+
+
+                    <label for="descriere" class="text3"><b>Descriere:</b></label>
                     <br>
-                    <br>
+
                     <textarea placeholder="Introdu descrierea animalului" name="descriere" >
 
                     </textarea>
@@ -82,16 +94,16 @@ include("../include/inHeaderAdmin.php");
 
                     <br>
 
-                    <label for="fundal"><b>Imaginea animalului:</b></label>
+                    <label for="fundal" class="text3"><b>Imaginea animalului:</b></label>
                     <input class="white_text" type="file" name="imagine">
 
                 </div>
 
                 <hr>
 
-                <button class="submit" type="submit" onclick="classNames()" name="submit">Adauga</button>
+                <button class="submit" type="submit" onclick="classNames()" name="submit" style="width:100px;">Adauga</button>
 
-                <button class="reset" type="reset">Reset</button>
+                <button class="reset" type="reset"  style="width:100px;">Reset</button>
 
 
 
@@ -198,4 +210,4 @@ if(isset($_POST["submit"])) {
 <?php
 include("../include/footer.php");
 ?>
-
+</body>

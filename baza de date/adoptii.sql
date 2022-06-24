@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Gazdă: 127.0.0.1
--- Timp de generare: iun. 20, 2022 la 09:32 PM
--- Versiune server: 10.4.24-MariaDB
--- Versiune PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Jun 24, 2022 at 09:17 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Bază de date: `adoptii`
+-- Database: `adoptii`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `administratori`
+-- Table structure for table `administratori`
 --
 
 CREATE TABLE `administratori` (
@@ -37,7 +37,7 @@ CREATE TABLE `administratori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `administratori`
+-- Dumping data for table `administratori`
 --
 
 INSERT INTO `administratori` (`id_administrator`, `nume`, `prenume`, `email`, `parola`, `telefon`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `administratori` (`id_administrator`, `nume`, `prenume`, `email`, `p
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `adoptii`
+-- Table structure for table `adoptii`
 --
 
 CREATE TABLE `adoptii` (
@@ -56,10 +56,18 @@ CREATE TABLE `adoptii` (
   `data_adoptie` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `adoptii`
+--
+
+INSERT INTO `adoptii` (`id_adoptie`, `id_utilizator`, `id_animal`, `data_adoptie`) VALUES
+('', '2', '4', '22-Jun-2022'),
+('1', '2', '2', '21-Jun-2022');
+
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `animale`
+-- Table structure for table `animale`
 --
 
 CREATE TABLE `animale` (
@@ -77,17 +85,20 @@ CREATE TABLE `animale` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `animale`
+-- Dumping data for table `animale`
 --
 
 INSERT INTO `animale` (`id_animal`, `nume`, `tip_animal`, `rasa`, `gen`, `varsta`, `mediu_viata`, `acomodabil`, `descriere`, `adoptat`, `imagine_ref`) VALUES
-('2', 'Cora', 'Caine', 'Bichon', 'F', '4', 'Casa si bloc', 'da', '\r\n        Animalul este prietenos cu toata lumea            ', 'nu', '../incarcari/imagine2.jpg'),
-('3', 'Sasha', 'Caine', 'Pechinez', 'F', '10', 'Bloc', 'da', 'Animalul are o problema care se poate vedea pe fisa medicala\r\n                    ', 'nu', '../incarcari/no_image.jpg');
+('2', 'Cora', 'Caine', 'Bichon', 'F', '4', 'Casa si bloc', 'da', '\r\n        Animalul este prietenos cu toata lumea            ', 'da', '../incarcari/imagine2.jpg'),
+('3', 'Sasha', 'Caine', 'Pechinez', 'F', '10', 'Bloc', 'da', 'Animalul are o problema care se poate vedea pe fisa medicala\r\n                    ', 'nu', '../incarcari/no_image.jpg'),
+('4', 'Cora', 'Caine', 'Bichon havanez', 'F', '4 ani', 'Casa si bloc', 'da', '\r\n                    Catelusa in varsta de 4 ani isi cauta viitorul stapan si prieten.', 'da', '../incarcari/imagine4.jpg'),
+('5', 'Misha', 'Caine', 'Ciobanesc german', 'F', '7 ani', 'Casa', 'nu', 'Prietenoasa cu oamenii ,dar nu si cu alte animale,MIsha este unul dintre sufletele care isi cauta o casa permanenta.\r\n                    ', 'nu', '../incarcari/imagine5.jpg'),
+('6', 'Athos', 'Pisica', 'Metis', 'M', '1 an', 'Casa si bloc', 'da', 'Motanelul Athos doreste sa faca cunostiinta cu tine si viitor sai prieteni. \r\n                    ', 'nu', '../incarcari/imagine6.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `anunturi`
+-- Table structure for table `anunturi`
 --
 
 CREATE TABLE `anunturi` (
@@ -101,17 +112,18 @@ CREATE TABLE `anunturi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `anunturi`
+-- Dumping data for table `anunturi`
 --
 
 INSERT INTO `anunturi` (`id_anunt`, `id_utilizator`, `titlu`, `descriere`, `imagine_ref`, `tip_anunt`, `locatie`) VALUES
 ('1', '1', 'Caut pisica', '\r\n                    Buna ziua, caut o pisica', '../incarcari/no_image.jpg', 'cautare_animal_nou', 'Timisoara'),
-('2', '2', 'Caut un catel pierdut', 'Buna ziua, am pierdut un caine in zona centrala a orasului\r\n                    ', '../incarcari/fundal2.jpg', 'cautare_animal_pierdut', 'Timisoara');
+('3', '2', 'Pierdut motan', 'Buna ziua. \r\nS-a pierdut un motan. Raspunde la numele de Athos. \r\nDaca aveti informatii va rog sa ma contactati. ', '../incarcari/fundal3.jpg', 'cautare_animal_pierdut', 'Tomnatic Principala'),
+('4', '3', 'Gasit catel', '\r\n             Buna ziua, am gasit un catel ratacind in zona Buziasului. \r\nDaca il recunoaste cineva  rog sa ma contacteze. \r\nMUltumesc!       ', '../incarcari/fundal4.jpg', 'cautare_animal_nou', 'Calea Buziasului Timisoara');
 
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `boli`
+-- Table structure for table `boli`
 --
 
 CREATE TABLE `boli` (
@@ -121,7 +133,7 @@ CREATE TABLE `boli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `boli`
+-- Dumping data for table `boli`
 --
 
 INSERT INTO `boli` (`id_boala`, `nume_boala`, `durata`) VALUES
@@ -133,7 +145,7 @@ INSERT INTO `boli` (`id_boala`, `nume_boala`, `durata`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `fisa_medicala`
+-- Table structure for table `fisa_medicala`
 --
 
 CREATE TABLE `fisa_medicala` (
@@ -142,17 +154,19 @@ CREATE TABLE `fisa_medicala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `fisa_medicala`
+-- Dumping data for table `fisa_medicala`
 --
 
 INSERT INTO `fisa_medicala` (`id_fisa`, `id_animal`) VALUES
 ('2', '2'),
-('1', '3');
+('1', '3'),
+('3', '4'),
+('4', '5');
 
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `mapare_boala_medicament`
+-- Table structure for table `mapare_boala_medicament`
 --
 
 CREATE TABLE `mapare_boala_medicament` (
@@ -162,7 +176,7 @@ CREATE TABLE `mapare_boala_medicament` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `mapare_boala_medicament`
+-- Dumping data for table `mapare_boala_medicament`
 --
 
 INSERT INTO `mapare_boala_medicament` (`id_mapare`, `id_boala`, `id_medicament`) VALUES
@@ -176,7 +190,7 @@ INSERT INTO `mapare_boala_medicament` (`id_mapare`, `id_boala`, `id_medicament`)
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `mapare_fisa_boala`
+-- Table structure for table `mapare_fisa_boala`
 --
 
 CREATE TABLE `mapare_fisa_boala` (
@@ -186,18 +200,21 @@ CREATE TABLE `mapare_fisa_boala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `mapare_fisa_boala`
+-- Dumping data for table `mapare_fisa_boala`
 --
 
 INSERT INTO `mapare_fisa_boala` (`id_mapare`, `id_fisa`, `id_boala`) VALUES
 ('1', '1', '4'),
 ('2', '2', '3'),
-('3', '2', '1');
+('3', '2', '1'),
+('4', '3', '1'),
+('5', '3', '4'),
+('6', '3', '3');
 
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `medicamente`
+-- Table structure for table `medicamente`
 --
 
 CREATE TABLE `medicamente` (
@@ -207,7 +224,7 @@ CREATE TABLE `medicamente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `medicamente`
+-- Dumping data for table `medicamente`
 --
 
 INSERT INTO `medicamente` (`id_medicament`, `denumire`, `ratie`) VALUES
@@ -222,7 +239,7 @@ INSERT INTO `medicamente` (`id_medicament`, `denumire`, `ratie`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `parole_securitate`
+-- Table structure for table `parole_securitate`
 --
 
 CREATE TABLE `parole_securitate` (
@@ -232,7 +249,7 @@ CREATE TABLE `parole_securitate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `parole_securitate`
+-- Dumping data for table `parole_securitate`
 --
 
 INSERT INTO `parole_securitate` (`parola1`, `parola2`, `parola3`) VALUES
@@ -241,7 +258,7 @@ INSERT INTO `parole_securitate` (`parola1`, `parola2`, `parola3`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `semnalari`
+-- Table structure for table `semnalari`
 --
 
 CREATE TABLE `semnalari` (
@@ -254,18 +271,19 @@ CREATE TABLE `semnalari` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `semnalari`
+-- Dumping data for table `semnalari`
 --
 
 INSERT INTO `semnalari` (`id_semnalare`, `id_utilizator`, `tip_semnalare`, `locatie`, `descriere`, `tip_animal`) VALUES
 ('1', '1', 'abuz', 'Strada Mures, Timisoara', 'Am gasit un animal abuzat\n                    ', 'pisica'),
 ('2', '1', 'abandon', 'Ploiesti', '\r\n                    Buna ziua, am gasit o pisica abandonata pe sosea langa oras', 'pisica'),
-('3', '2', 'abandon', 'Deva', 'Buna ziua, am gasit abandonate 3 catei pe marginea soselei\r\n                    ', 'caine');
+('3', '2', 'abandon', 'Deva', 'Buna ziua, am gasit abandonate 3 catei pe marginea soselei\r\n                    ', 'caine'),
+('4', '3', 'abandon', 'Sannicolau Mare', 'Catel gasit la marginea drumului   de camp. \r\n                    ', 'caine');
 
 -- --------------------------------------------------------
 
 --
--- Structură tabel pentru tabel `utilizatori`
+-- Table structure for table `utilizatori`
 --
 
 CREATE TABLE `utilizatori` (
@@ -278,82 +296,83 @@ CREATE TABLE `utilizatori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Eliminarea datelor din tabel `utilizatori`
+-- Dumping data for table `utilizatori`
 --
 
 INSERT INTO `utilizatori` (`id_utilizator`, `nume`, `prenume`, `email`, `parola`, `telefon`) VALUES
 ('1', 'Andrei', 'Andrei', 'andrei.pop@gmail.com', '123456789', '0761959267'),
-('2', 'Utilizator', 'Norbert', 'user2@gmail.com', '123456789', '0761234567');
+('2', 'Utilizator', 'Norbert', 'user2@gmail.com', '123456789', '0761234567'),
+('3', 'Popescu', 'Anamaria', 'ana.maria@yahoo.com', 'zapada', '0786543679');
 
 --
--- Indexuri pentru tabele eliminate
+-- Indexes for dumped tables
 --
 
 --
--- Indexuri pentru tabele `administratori`
+-- Indexes for table `administratori`
 --
 ALTER TABLE `administratori`
   ADD PRIMARY KEY (`id_administrator`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexuri pentru tabele `adoptii`
+-- Indexes for table `adoptii`
 --
 ALTER TABLE `adoptii`
   ADD PRIMARY KEY (`id_adoptie`);
 
 --
--- Indexuri pentru tabele `animale`
+-- Indexes for table `animale`
 --
 ALTER TABLE `animale`
   ADD PRIMARY KEY (`id_animal`);
 
 --
--- Indexuri pentru tabele `anunturi`
+-- Indexes for table `anunturi`
 --
 ALTER TABLE `anunturi`
   ADD PRIMARY KEY (`id_anunt`),
   ADD KEY `id_utilizator` (`id_utilizator`);
 
 --
--- Indexuri pentru tabele `boli`
+-- Indexes for table `boli`
 --
 ALTER TABLE `boli`
   ADD PRIMARY KEY (`id_boala`);
 
 --
--- Indexuri pentru tabele `fisa_medicala`
+-- Indexes for table `fisa_medicala`
 --
 ALTER TABLE `fisa_medicala`
   ADD PRIMARY KEY (`id_fisa`),
   ADD KEY `id_animal` (`id_animal`);
 
 --
--- Indexuri pentru tabele `mapare_boala_medicament`
+-- Indexes for table `mapare_boala_medicament`
 --
 ALTER TABLE `mapare_boala_medicament`
   ADD PRIMARY KEY (`id_mapare`);
 
 --
--- Indexuri pentru tabele `mapare_fisa_boala`
+-- Indexes for table `mapare_fisa_boala`
 --
 ALTER TABLE `mapare_fisa_boala`
   ADD PRIMARY KEY (`id_mapare`);
 
 --
--- Indexuri pentru tabele `medicamente`
+-- Indexes for table `medicamente`
 --
 ALTER TABLE `medicamente`
   ADD PRIMARY KEY (`id_medicament`);
 
 --
--- Indexuri pentru tabele `semnalari`
+-- Indexes for table `semnalari`
 --
 ALTER TABLE `semnalari`
   ADD PRIMARY KEY (`id_semnalare`);
 
 --
--- Indexuri pentru tabele `utilizatori`
+-- Indexes for table `utilizatori`
 --
 ALTER TABLE `utilizatori`
   ADD PRIMARY KEY (`id_utilizator`),

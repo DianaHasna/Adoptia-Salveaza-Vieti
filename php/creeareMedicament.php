@@ -13,25 +13,27 @@ include("../include/inHeaderAdmin.php");
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/look.png" >
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
             <div class="container">
                 <div id="formular">
-                    <h1 align="center" class="a">Creeare medicament</h1>
-
-                    <label for="nume"><b>Numele meicamentului:</b></label>
-                    <input type="text" placeholder="Adauga numele medicamentului" name="nume" />
+                    <h1 align="center" class="a">Adauga medicament</h1>
+<br>
+<br>
+                    <label for="nume"><b>Denumire medicament:</b></label>
+                    <input type="text" placeholder="Adauga denumirea medicamentului" name="nume" />
 
                     <br>
-                    <label for="durata"><b>Ratia de administrare a medicamentului:</b></label>
-                    <input type="text" placeholder="Adauga ratia medicamentului" name="ratie" />
+                    <label for="durata"><b>Dozaj medicament:</b></label>
+                    <input type="text" placeholder="Adauga dozajul medicamentului" name="ratie" />
 
                     <hr>
 
-                    <button class="submit" type="submit" name="submit">Adauga</button>
+                    <button class="submit" type="submit" name="submit" style="width: 100px">Adauga</button>
 
-                    <button class="reset" type="reset">Reset</button>
+                    <button class="reset" type="reset" style="width: 100px">Reset</button>
 
                 </div>
 
@@ -88,4 +90,5 @@ if(isset($_POST["submit"])) {
 }
 
 
+include("../include/footer.php");
 

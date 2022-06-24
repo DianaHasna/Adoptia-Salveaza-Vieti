@@ -38,6 +38,8 @@ $data_adoptie = date("d-M-Y");
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/adoptie.jpg"></body>
+
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
@@ -130,10 +132,9 @@ if(isset($_POST['submit'])){
 
     } else {
         $adoptie_id = $maxim_id + 1;
-        $adoptie_id = (string)$anunt_id;
+        $adoptie_id = (string)$adoptie_id;
 
     }
-
     $insert_adoptie = $conn->prepare("insert into adoptii values(?,?,?,?)");
     $res = $insert_adoptie->execute(array($adoptie_id,$id_utilizator,$id_animal,$data_adoptie));
 

@@ -27,42 +27,15 @@ $check_animal->execute(array($id_animal));
 
 $infoAnimal = $check_animal->fetch();
 
-echo "<center><h2>" . $infoAnimal['nume'] .  "</h2></center><br><br>";
-echo "<p>Descriere: </p><br><br>";
-echo "<p>" . $infoAnimal['descriere'] . "</p>";
 
-if($infoAnimal['imagine_ref'] !== "../incarcari/no_image.jpg"){
-    echo "<img src='" . $infoAnimal['imagine_ref'] . "'>";
-}
-
-echo "<p>Rasa: " . $infoAnimal['rasa'] . "</p>";
-echo "<p>Gen: " . $infoAnimal['gen'] . "</p>";
-echo "<p>Varsta: " . $infoAnimal['varsta'] . " ani</p>";
-echo "<p>Mediu de viata: " . $infoAnimal['mediu_viata'] . "</p>";
-echo "<p>Acomodabil cu alte animale: " . $infoAnimal['acomodabil'] . "</p>";
 
 $check_fisa = $conn->prepare("select * from fisa_medicala where id_animal=?");
 $check_fisa->execute(array($id_animal));
 
 $rows = $check_fisa->rowCount();
 
-if(isset($_SESSION['id_administrator'])){
-
-    if($rows == 0) {
-        echo "<form action='' method='post'>";
-        echo "<button class='submit' type='submit' name='submit'>Creeaza fisa</button>";
-        echo "</form>";
-    }
-}
-if($rows == 1) {
-    echo "<a href='vizualizareFisa.php?id_animal=" . $id_animal . "'>Vezi fisa medicala a animalului</a>";
-}
-if(isset($_SESSION['id_utilizator'])){
-    echo "<br><a href='adoptaAnimal.php?id_animal=" . $id_animal . "'>Adopta animalul curent</a>";
-}
 
 
-include("../include/footer.php");
 
 
 
@@ -103,3 +76,85 @@ if(isset($_POST['submit'])){
 
 }
 
+
+
+?>
+
+
+<title>Vizualizare animal</title>
+
+
+    <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <style>
+td{
+    font-weight: bold;
+        }
+    </style>
+
+
+    <div class="row content">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <table class="table table-bordered table-hover">
+                    <tr align="center">
+                        <td colspan="7" class="active"><h2><?php echo $infoAnimal['nume']; ?></h2>
+
+                    <tr>
+                        <th rowspan="7"> <?php echo "<img src='" . $infoAnimal['imagine_ref'] . "' style ='width:200px;height:200px''>"; ?>
+
+                        <td>Descriere
+                        <td><textarea class="form-control" type="text" name="nume" ><?php echo $infoAnimal['descriere']; ?>
+                            </textarea>
+                    <tr>
+                        <td>Rasa
+                        <td><?php echo $infoAnimal['rasa']; ?>
+                    <tr>
+                        <td>Gen
+                        <td><?php echo $infoAnimal['gen']; ?>
+                    <tr>
+                        <td>Varsta
+                        <td><?php echo$infoAnimal['varsta'] ;?>
+                    <tr>
+                    <tr>
+                        <td>Mediu de viata
+                        <td><?php echo$infoAnimal['mediu_viata']; ?>
+
+                    <tr>
+                        <td>Acomodabil
+                        <td><?php echo$infoAnimal['acomodabil']; ?>
+
+
+                    <tr align="center">
+                        <td colspan="7"><?php  if($rows == 0 and isset ($_SESSION['id_administrator'])) {
+                                echo "<form action='' method='post'>";
+                                echo "<button class='submit' type='submit' name='submit'>Creeaza fisa</button>";
+                                echo "</form>";
+                            };?>
+
+                    <tr align="center">
+                        <td colspan="7">           <?php
+                            if($rows == 1) {
+                            echo "<button class='btn3' ><a href='vizualizareFisa.php?id_animal=" . $id_animal . "' style='color:#0b0c10 '>Fisa medicala</a>";
+                            } ?>
+
+                    <tr align="center">
+                        <td colspan="7"> <?php
+                            if(isset($_SESSION['id_utilizator'])){
+                                echo "<br><a class='btn3' href='adoptaAnimal.php?id_animal=" . $id_animal . "' style='color:#0b0c10 '>Adopta animalul curent.</a>";
+                            }
+                             ?>
+
+
+
+
+                </table>
+            </form>
+
+        </div>
+
+    </div>
+
+<?php include("../include/footer.php"); ?>

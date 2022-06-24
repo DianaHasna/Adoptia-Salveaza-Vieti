@@ -17,29 +17,36 @@ include("../include/inHeaderUser.php");
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/709056.jpg" ></body>
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
-            <div class="container">
-                <div id="formular">
-                    <h1 align="center" class="a">Cauta animale disponibile</h1>
+            <div class="container4" >
+                <div id="formular" >
+                    <h1 align="center" class="a2">Cauta animale </h1>
+                    <br>
+                    <br>
 
                     <p><label for="tip_animal"><b>Tipul animalului cautat:</b></label>
                     <br><input type="radio" name="tip_animal" value="Caine" checked/>Caine
                         <br><input type="radio" name="tip_animal" value="Pisica"/>Pisica </p>
+                    <br>
 
                     <p><label for="gen_animal"><b>Genul animalului:</b></label>
                     <br><input type="radio" name="gen_animal" value="F" checked/>Feminim
                         <br><input type="radio" name="gen_animal" value="M"/>Masculin </p>
+                    <br>
 
                     <p><label for="acomodabil"><b>Detineti si alte animale?</b></label>
                         <br><input type="radio" name="acomodabil" value="da" checked/>Da
                         <br><input type="radio" name="acomodabil" value="nu"/>Nu </p>
+                    <br>
 
                     <p><label for="mediu_viata"><b>Unde locuiti?</b></label>
                         <br><input type="radio" name="mediu_viata" value="Casa" checked/>Casa
                         <br><input type="radio" name="mediu_viata" value="Bloc"/>Bloc
                         <br><input type="radio" name="mediu_viata" value="Casa si bloc"/>Casa si bloc </p>
+                    <br>
 
 
 
@@ -48,9 +55,9 @@ include("../include/inHeaderUser.php");
 
                 <hr>
 
-                <button class="submit" type="submit" name="submit">Cauta animale</button>
+                <button class="submit" type="submit" name="submit" style="width: 100px">Cautare</button>
 
-                <button class="reset" type="reset">Reset</button>
+                <button class="reset" type="reset"  style="width: 100px">Reset</button>
 
 
 

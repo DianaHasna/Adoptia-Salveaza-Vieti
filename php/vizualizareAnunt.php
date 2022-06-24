@@ -27,15 +27,53 @@ $check_anunturi->execute(array($id_anunt));
 
 $infoAnunt = $check_anunturi->fetch();
 
-echo "<center><h2>" . $infoAnunt['titlu'] .  "</h2></center><br><br>";
-echo "<p>Descriere: </p><br><br>";
-echo "<p>" . $infoAnunt['descriere'] . "</p>";
 
-if($infoAnunt['imagine_ref'] !== "../incarcari/no_image.jpg"){
-    echo "<img src='" . $infoAnunt['imagine_ref'] . "'>";
-}
-
-echo "<p>Locatie: " . $infoAnunt['locatie'] . "</p>";
+?>
 
 
+    <title>Vizualizare anunt</title>
+
+
+    <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <style>
+        td{
+            font-weight: bold;
+        }
+    </style>
+
+
+    <div class="row content">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <table class="table table-bordered table-hover">
+                    <tr align="center">
+                        <td colspan="2">Descriere
+
+                    <tr>
+                        <th> <?php
+                            if($infoAnunt['imagine_ref'] !== "../incarcari/no_image.jpg"){
+                            echo "<img src='" . $infoAnunt['imagine_ref'] . "'style ='width:200px;height:200px''>";}
+                            ?>
+                        <td><?php
+                            echo $infoAnunt['descriere']; ?>
+
+
+                    <tr>
+                        <td>Locatie
+                        <td><?php echo $infoAnunt['locatie'] ; ?>
+                </table>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+<?php
 include("../include/footer.php");
+?>

@@ -21,47 +21,50 @@ else{
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 <script type="text/javascript" src="../javascript/adminJS.js" > </script>
+<body background="../imagini/some.jpg"> </body>
 <div class="content">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="container1">
             <div class="container">
                 <div id="formular">
                     <h1 align="center" class="a">Adauga anunt</h1>
-
-                    <label for="titlu"><b>Titlu:</b></label>
-                    <input type="text" placeholder="Introdu titlul anuntului" name="titlu" />
-
-                    <label for="titlu"><b>Descriere:</b></label>
                     <br>
                     <br>
-                    <textarea placeholder="Introdu descrierea anuntului" name="descriere" >
+
+                    <label for="titlu" class="text4"><b>Titlu:</b></label>
+                    <input type="text" placeholder="Introdu titlul anuntului" name="titlu" class="text3" />
+
+                    <label for="titlu" class="text4"><b>Descriere:</b></label>
+                    <br>
+                    <br>
+                    <textarea placeholder="Introdu descrierea anuntului" name="descriere"  class="text3" >
 
                     </textarea>
 
                     <br>
                     <br>
-                    <label for="fundal"><b>Imagine fundal:</b></label>
-                    <input class="white_text" type="file" name="fundal">
+                    <label for="fundal" class="text4"><b>Imagine fundal:</b></label>
+                    <input class="white_text" type="file" name="fundal" >
 
-                    <label for="tip_anunt"><b>Tipul anuntului:</b></label>
+                    <label for="tip_anunt"class="text4"><b>Tipul anuntului:</b></label>
                     <br>
-                    <input type="radio" value="cautare_animal_pierdut" name="tip_anunt" >
-                    <input type="button" value="cautare_animal_pierdut" name="cautare_animal_pierdut">
+                    <input type="radio" value="cautare_animal_pierdut" name="tip_anunt" class="text3"  >
+                    <input type="button" value="Pierdut" name="cautare_animal_pierdut" class="btn" >
 
-                    <input type="radio" value="cautare_animal_nou" name="tip_anunt">
-                    <input type="button" value="cautare_animal_nou" name="cautare_animal_nou">
+                    <input type="radio" value="cautare_animal_nou" name="tip_anunt" class="text3" >
+                    <input type="button" value="Gasit" name="cautare_animal_nou" class="btn" >
 
                     <br>
-                    <label for="locatie"><b>Locatie:</b></label>
-                    <input type="text" placeholder="Introdu locatia" name="locatie" >
+                    <label for="locatie" class="text4"><b>Locatie:</b></label>
+                    <input type="text" placeholder="Introdu locatia" name="locatie"class="text3"  >
 
                 </div>
 
-                <hr>
 
-                <button class="submit" type="submit" onclick="classNames()" name="submit">Adauga</button>
 
-                <button class="reset" type="reset">Reset</button>
+                <button class="submit" type="submit" onclick="classNames()" name="submit"  >Adauga</button>
+
+                <button class="reset" type="reset"  >Reset</button>
 
 
 
